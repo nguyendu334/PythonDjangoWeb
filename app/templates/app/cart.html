@@ -36,8 +36,8 @@
 				<div style="flex:2"><p>{{item.product.name}}</p></div>
 				<div style="flex:1"><p>${{item.product.price | floatformat:0}}</p></div>
 				<div style="flex:1">
-					<p class="quantity">{{item.quantity}}</p>
-					<div class="quantity">
+					<p class="quantity" style="margin: 5px">{{item.quantity}}</p>
+					<div class="quantity" >
 						<img class="chg-quantity" src="{% static  'app/images/arrow-up.png' %}" >
 						<img class="chg-quantity" src="{% static  'app/images/arrow-down.png' %}">
 					</div>
