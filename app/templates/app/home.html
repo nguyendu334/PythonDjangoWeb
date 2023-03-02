@@ -57,66 +57,18 @@
 {% endblock banner_slider %}
 {% block main-content %}
 <div class="row" style="max-width:1536px; margin-left: auto; margin-right: auto; padding-top: 16px">
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'app/images/cow-ghee.png' %}" alt="" style="display:block; margin: auto;"/>
+    {% for product in products %}
+    <div class="col-lg-3">
+        <img class="thumbnail" src="{{product.ImageUrl}}" style="display:block; margin: auto;"/>
         <div class="box-element product">
-            <h6><strong>Cow Ghee</strong></h6>
+            <h6><strong>{{product.name}}</strong></h6>
             <hr>
-            <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
-            <a class="btn btn-outline-success" href="#">Xem</a>
-            <h3 style="display: inline-block; float: right;"><strong>200.000 VNĐ</strong></h3>
+            <button class="btn btn-outline-secondary add-btn">Add to cart</button>
+            <a class="btn btn-outline-success" href="#">Views</a>
+            <h3 style="display: inline-block; float: right;"><strong>${{product.price | floatformat:0}}</strong></h3>
         </div>
     </div>
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'app/images/cow-ghee.png' %}" alt="" style="display:block; margin: auto;"/>
-        <div class="box-element product">
-            <h6><strong>Cow Ghee</strong></h6>
-            <hr>
-            <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
-            <a class="btn btn-outline-success" href="#">Xem</a>
-            <h3 style="display: inline-block; float: right;"><strong>200.000 VNĐ</strong></h3>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'app/images/cow-ghee.png' %}" alt="" style="display:block; margin: auto;"/>
-        <div class="box-element product">
-            <h6><strong>Cow Ghee</strong></h6>
-            <hr>
-            <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
-            <a class="btn btn-outline-success" href="#">Xem</a>
-            <h3 style="display: inline-block; float: right;"><strong>200.000 VNĐ</strong></h3>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'app/images/cow-ghee.png' %}" alt="" style="display:block; margin: auto;" />
-        <div class="box-element product">
-            <h6><strong>Cow Ghee</strong></h6>
-            <hr>
-            <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
-            <a class="btn btn-outline-success" href="#">Xem</a>
-            <h3 style="display: inline-block; float: right;"><strong>200.000 VNĐ</strong></h3>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'app/images/cow-ghee.png' %}" alt="" style="display:block; margin: auto;" />
-        <div class="box-element product">
-            <h6><strong>Cow Ghee</strong></h6>
-            <hr>
-            <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
-            <a class="btn btn-outline-success" href="#">Xem</a>
-            <h3 style="display: inline-block; float: right;"><strong>200.000 VNĐ</strong></h3>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'app/images/cow-ghee.png' %}" alt="" style="display:block; margin: auto;" />
-        <div class="box-element product">
-            <h6><strong>Cow Ghee</strong></h6>
-            <hr>
-            <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
-            <a class="btn btn-outline-success" href="#">Xem</a>
-            <h3 style="display: inline-block; float: right;"><strong>200.000 VNĐ</strong></h3>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 <br />
 <br />
