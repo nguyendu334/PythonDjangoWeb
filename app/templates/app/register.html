@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% extends 'app/base.html' %} {% load static %}
 <html>
     <head>
         <meta charset="utf-8" />
@@ -13,12 +9,82 @@
         <link rel="stylesheet" href="" />
     </head>
     <body>
-        <h1>Register</h1>
-        <form method="POST" action="">
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Register" name="Create user"/>
-        </form>
+        {% block register %}
+        <section
+            class="bg-image"
+            style="background-image: url('https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg');  height: 90vh"
+        >
+            <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+                <div class="container h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="card" style="border-radius: 50px; width: 500px">
+                                <div class="card-body p-5">
+                                    <h3 class="text-uppercase text-center mb-5">Create an account</h3>
+
+                                    <form method="POST" action="">
+                                        {% csrf_token %}
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form3Example1cg" style="width: 150px"
+                                                >User Name</label
+                                            >
+                                            {{form.username}}
+                           
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form3Example3cg" style="width: 150px"
+                                                >Email</label
+                                            >
+                                            {{form.email}}
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form3Example1cg" style="width: 150px"
+                                                >First Name</label
+                                            >
+                                            {{form.first_name}}
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form3Example1cg" style="width: 150px"
+                                                >Last Name</label
+                                            >
+                                            {{form.last_name}}
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form3Example4cg" style="width: 150px"
+                                                >Password</label
+                                            >
+                                            {{form.password1}}
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form3Example4cdg" style="width: 150px"
+                                                >Confirm password</label
+                                            >
+                                            {{form.password2}}
+                                        </div>
+
+                                        <div class="d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-outline-success rounded" style="width: 100px; height: 45px">Register</button>
+                                        </div>
+
+                                        <p class="text-center text-muted mt-5 mb-0">
+                                            Have already an account?
+                                            <a href="/login" class="fw-bold text-body"><u>Login</u></a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <script src="" async defer></script>
+        {% endblock register %}
     </body>
 </html>

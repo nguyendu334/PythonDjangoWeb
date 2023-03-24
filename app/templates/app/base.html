@@ -11,8 +11,8 @@
             integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="{% static 'app/css/style.css' %}" />
         <link rel="stylesheet" href="{% static 'app/css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'app/css/style.css' %}" />
         <link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}" />
         <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}" />
 
@@ -63,8 +63,8 @@
     <body>
         <nav class="navbar navbar-expand-lg bg-body-tertiary" style="max-width:1650px; display: block; margin-left: auto; margin-right: auto">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'app/images/Neel.png' %}" alt="logo" width="50" height="50" />
+                <a class="navbar-brand" href="{% url 'home' %}" style="margin-left: 50px">
+                    <img src="{% static 'app/images/logo.jpg' %}" alt="logo" width="100" height="100" />
                 </a>
                 <button
                     class="navbar-toggler"
@@ -80,7 +80,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Trang chủ</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="font-size: 18px">Trang chủ</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a
@@ -89,27 +89,28 @@
                                 role="button"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
+                                style="font-size: 18px; margin-left: 20px"
                             >
                                 Sản phẩm
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Sữa</a></li>
-                                <li><a class="dropdown-item" href="#">Sữa</a></li>
-                                <li><a class="dropdown-item" href="#">Sữa</a></li>
-                                <li><a class="dropdown-item" href="#">Sữa</a></li>
+                                <li><a class="dropdown-item" href="#">Apple</a></li>
+                                <li><a class="dropdown-item" href="#">Samsung</a></li>
+                                <li><a class="dropdown-item" href="#">Sony</a></li>
+                                <li><a class="dropdown-item" href="#">Nokia</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Giới thiệu</a>
+                            <a class="nav-link" href="#" style="font-size: 18px; margin-left: 20px">Giới thiệu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Liên hệ</a>
+                            <a class="nav-link" href="#" style="font-size: 18px; margin-left: 20px">Liên hệ</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
+                    {% comment %} <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form> {% endcomment %}
                 </div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
@@ -119,6 +120,7 @@
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
+                            style="font-size: 18px; margin-left: 20px"
                         >
                             Người dùng
                         </a>
@@ -129,15 +131,15 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Đăng nhập</a>
+                        <a class="nav-link" href="/login" style="font-size: 18px; margin-left: 20px">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Đăng ký</a>
+                        <a class="nav-link" href="/register" style="font-size: 18px; margin-left: 20px">Đăng ký</a>
                     </li>
                 </ul>
                 <div class='form-inline my-2 my-lg-0'>
-                    <a href="{% url 'cart' %}"><img id="cart-icon" src="{% static 'app/images/cart.png' %}"/></a>
-                    <p id='cart-total'>{{cartItems}}</p>
+                    <a href="{% url 'cart' %}"><img id="cart-icon" src="{% static 'app/images/cart.png' %}" style="width: 35px"></a>
+                    {% comment %} <p id='cart-total'>{{cartItems}}</p> {% endcomment %}
                 </div>
             </div>
         </nav>
@@ -146,6 +148,8 @@
         {% block main-content %}{% endblock main-content %}
         {% block cart_content %}{% endblock cart_content %}
         {% block content_checkout %}{% endblock content_checkout %}
+        {% block login %} {% endblock login %}
+        {% block register %} {% endblock register %}
 
         <footer class="container-fluid bg-success text-center fixed-bottom p-2 mt-5">Copyright 2023</footer>
 
