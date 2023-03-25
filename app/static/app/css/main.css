@@ -103,3 +103,7 @@ h6 {
     display: none !important;
 }
 
+.input-text {
+    width: 500px;
+}
+

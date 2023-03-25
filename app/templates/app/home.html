@@ -1,7 +1,10 @@
-{% extends 'app/base.html' %}
-{% load static %}
-{% block banner_slider %}
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="max-width:1200px; display: block; margin-left: auto; margin-right: auto">
+{% extends 'app/base.html' %} {% load static %} {% block banner_slider %}
+<div
+    id="carouselExampleDark"
+    class="carousel carousel-dark slide"
+    data-bs-ride="carousel"
+    style="max-width: 1200px; display: block; margin-left: auto; margin-right: auto"
+>
     <div class="carousel-indicators">
         <button
             type="button"
@@ -54,18 +57,29 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-{% endblock banner_slider %}
-{% block main-content %}
-<div class="row" style="max-width:1536px; margin-left: auto; margin-right: auto; padding-top: 16px">
+{% endblock banner_slider %} {% block main-content %}
+
+<div class="row" style="max-width: 1536px; margin-left: auto; margin-right: auto; padding-top: 16px">
+    <div style="margin-top: 20px">
+        <p style="font-size: 30px; margin-left: 50px; border-bottom: 2px solid #333; display: inline; cursor: pointer">
+            <strong>TẤT CẢ SẢN PHẨM</strong>
+        </p>
+    </div>
     {% for product in products %}
-    <div class="col-lg-3">
-        <img class="thumbnail" src="{{product.ImageUrl}}" style="display:block; margin: auto;"/>
+    <div class="col-lg-3" style="height: 450px; margin-top: 50px">
+        <img class="thumbnail" src="{{product.ImageUrl}}" style="display: block; margin: auto; height: 320px; cursor: pointer" />
         <div class="box-element product">
-            <h6><strong>{{product.name}}</strong></h6>
-            <hr>
-            <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
-            <a class="btn btn-outline-success" href="#">Views</a>
-            <h3 style="display: inline-block; float: right;"><strong>${{product.price | floatformat:0}}</strong></h3>
+            <h6 style="margin-top: 12px; cursor: pointer"><strong>{{product.name}}</strong></h6>
+            <hr />
+            <button
+                data-product="{{product.id}}"
+                data-action="add"
+                class="btn btn-outline-secondary add-btn update-cart rounded-3"
+            >
+                Add to cart
+            </button>
+            <a class="btn btn-outline-success rounded-3" href="#">Views</a>
+            <h3 style="display: inline-block; float: right"><strong>${{product.price | floatformat:0}}</strong></h3>
         </div>
     </div>
     {% endfor %}

@@ -61,10 +61,10 @@
         <link rel="stylesheet" href="" />
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="max-width:1650px; display: block; margin-left: auto; margin-right: auto">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" style="max-width:1920px; display: block; margin-left: auto; margin-right: auto">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}" style="margin-left: 50px">
-                    <img src="{% static 'app/images/logo.jpg' %}" alt="logo" width="100" height="100" />
+                <a class="navbar-brand" href="{% url 'home' %}" style="margin-left: 200px;">
+                    <img src="{% static 'app/images/logo.jpg' %}" alt="logo" width="70" height="70" style="border-radius: 50%"/>
                 </a>
                 <button
                     class="navbar-toggler"
@@ -80,7 +80,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="font-size: 18px">Trang chủ</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="font-size: 18px; margin-left: 30px;">Trang chủ</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a
@@ -89,7 +89,7 @@
                                 role="button"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
-                                style="font-size: 18px; margin-left: 20px"
+                                style="font-size: 18px; margin-left: 14px"
                             >
                                 Sản phẩm
                             </a>
@@ -101,10 +101,10 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="font-size: 18px; margin-left: 20px">Giới thiệu</a>
+                            <a class="nav-link" href="#" style="font-size: 18px; margin-left: 14px">Giới thiệu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="font-size: 18px; margin-left: 20px">Liên hệ</a>
+                            <a class="nav-link" href="#" style="font-size: 18px; margin-left: 14px">Liên hệ</a>
                         </li>
                     </ul>
                     {% comment %} <form class="d-flex" role="search">
@@ -120,7 +120,7 @@
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
-                            style="font-size: 18px; margin-left: 20px"
+                            style="font-size: 18px; margin-left: 14px"
                         >
                             Người dùng
                         </a>
@@ -131,13 +131,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/login" style="font-size: 18px; margin-left: 20px">Đăng nhập</a>
+                        <a class="nav-link" href="/login" style="font-size: 18px; margin-left: 14px">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/register" style="font-size: 18px; margin-left: 20px">Đăng ký</a>
+                        <a class="nav-link" href="/register" style="font-size: 18px; margin-left: 14px">Đăng ký</a>
                     </li>
                 </ul>
-                <div class='form-inline my-2 my-lg-0'>
+                <div class='form-inline my-2 my-lg-0' style="margin-right: 200px">
                     <a href="{% url 'cart' %}"><img id="cart-icon" src="{% static 'app/images/cart.png' %}" style="width: 35px"></a>
                     {% comment %} <p id='cart-total'>{{cartItems}}</p> {% endcomment %}
                 </div>

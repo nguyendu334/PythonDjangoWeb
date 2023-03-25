@@ -12,7 +12,7 @@
         {% block register %}
         <section
             class="bg-image"
-            style="background-image: url('https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg');  height: 90vh"
+            style="background-image: url('https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg');  height: 87vh"
         >
             <div class="mask d-flex align-items-center h-100 gradient-custom-3">
                 <div class="container h-100">
@@ -26,50 +26,31 @@
                                         {% csrf_token %}
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form3Example1cg" style="width: 150px"
-                                                >User Name</label
-                                            >
                                             {{form.username}}
-                           
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form3Example3cg" style="width: 150px"
-                                                >Email</label
-                                            >
                                             {{form.email}}
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form3Example1cg" style="width: 150px"
-                                                >First Name</label
-                                            >
                                             {{form.first_name}}
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form3Example1cg" style="width: 150px"
-                                                >Last Name</label
-                                            >
                                             {{form.last_name}}
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form3Example4cg" style="width: 150px"
-                                                >Password</label
-                                            >
                                             {{form.password1}}
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form3Example4cdg" style="width: 150px"
-                                                >Confirm password</label
-                                            >
                                             {{form.password2}}
                                         </div>
 
                                         <div class="d-flex justify-content-center">
-                                            <button type="submit" class="btn btn-outline-success rounded" style="width: 100px; height: 45px">Register</button>
+                                            <button type="submit" class="btn btn-outline-success rounded">Register</button>
                                         </div>
 
                                         <p class="text-center text-muted mt-5 mb-0">

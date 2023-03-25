@@ -1,12 +1,24 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from django.forms import TextInput, EmailInput, PasswordInput
 
 # Create your models here.
 class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2']
+        widgets = {'username' :TextInput(attrs= {'class': "form-control",'placeholder': 'User name'}),
+                   'email': EmailInput(attrs= {'class': "form-control",'placeholder': 'Email'}),
+                   'first_name': TextInput(attrs= {'class': "form-control",'placeholder': 'First name'}),
+                   'last_name': TextInput(attrs= {'class': "form-control",'placeholder': 'Last name'}),
+                   } 
+    password1 = forms.CharField(
+        widget = PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}))
+    password2 = forms.CharField(
+        widget = PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm password'}))
+        
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=200, null=True)
