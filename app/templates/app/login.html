@@ -29,11 +29,11 @@
                                         {% csrf_token %}
 
                                         <div class="form-outline mb-4">
-                                            {{form.username}}
+                                            <input type="text" name='username' id="form3Example1cg" class="form-control" placeholder='User name'/>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            {{form.password1}}
+                                            <input type="password" name='password' id="form3Example4cg" class="form-control" placeholder='Password'/>
                                         </div>
 
                                         <div class="d-flex justify-content-center">
@@ -42,7 +42,7 @@
 
                                         <p class="text-center text-muted mt-5 mb-0">
                                             Don't have an account?
-                                            <a href="/register" class="fw-bold text-body"><u>Register</u></a>
+                                            <a href={% url 'register'%} class="fw-bold text-body"><u>Register</u></a>
                                         </p>
                                     </form>
                                 </div>

@@ -122,12 +122,12 @@
                             aria-expanded="false"
                             style="font-size: 18px; margin-left: 14px"
                         >
-                            Người dùng
+                        <span>Hello! {{request.user}}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Tài khoản</a></li>
                             <li><a class="dropdown-item" href="#">Đơn hàng</a></li>
-                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                            <li><a class="dropdown-item" href={% url 'logout' %} style="border-top: 1px solid #333;">Đăng xuất</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
