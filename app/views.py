@@ -6,6 +6,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 # Create your views here.
+def search(request):
+    if request.method == 'POST':
+        searched = request.POST['searchId']
+        keys = Product.objects.filter(name__icontains=searched)
+    return render(request, 'app/search.html', {"searched":searched, "keys":keys})
 def register(request):
     form = CreateUserForm()
     if request.method == 'POST':
