@@ -94,10 +94,9 @@
                                 Sản phẩm
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Apple</a></li>
-                                <li><a class="dropdown-item" href="#">Samsung</a></li>
-                                <li><a class="dropdown-item" href="#">Sony</a></li>
-                                <li><a class="dropdown-item" href="#">Nokia</a></li>
+                                {% for category in categories %}
+                                    <li><a class="dropdown-item" href={%url 'category' %}?category={{category.slug}}>{{category.name}}</a></li>
+                                {% endfor %}
                             </ul>
                         </li>
                         <li class="nav-item">
