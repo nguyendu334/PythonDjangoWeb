@@ -7,6 +7,36 @@ from django.contrib import messages
 
 
 # Create your views here.
+
+def detail(request):
+    if request.user.is_authenticated:
+        customer = request.user
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+        user_not_login = "hidden"
+        user_login = "show"
+    else:
+        items = []
+        order = {"get_cart_total": 0, "get_cart_items": 0}
+        cartItems = order["get_cart_items"]
+        user_not_login = "show"
+        user_login = "hidden"
+    id = request.GET.get("id", "")
+    products = Product.objects.filter(id=id)
+    categories = Category.objects.filter(isSub=False)
+    active_category = request.GET.get("category", "")
+    context = {
+        "products": products,
+        "items": items,
+        "order": order,
+        "cartItems": cartItems,
+        "user_not_login": user_not_login,
+        "categories": categories,
+        "active_category": active_category,
+    }
+    return render(request, "app/detail.html", context)
+
 def category(request):
     categories = Category.objects.filter(isSub=False)
     active_category = request.GET.get("category", "")
@@ -93,7 +123,6 @@ def home(request):
     }
     return render(request, "app/home.html", context)
 
-
 def cart(request):
     if request.user.is_authenticated:
         customer = request.user
@@ -164,3 +193,4 @@ def updateItem(request):
     if orderItem.quantity <= 0:
         orderItem.delete()
     return JsonResponse("Item was added", safe=False)
+

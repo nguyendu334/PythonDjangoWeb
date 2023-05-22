@@ -112,17 +112,7 @@
                         <button class="btn btn-primary rounded" type="submit">Search</button>
                       </form>
                 </div>
-                
-                {% comment %} <div class='form-inline my-2 my-lg-0' style="visibility: {{user_login}}">
-                    
-                    <span>Hello! {{request.user}}</span>
-                    <span><a href={% url 'logout' %} >Đăng xuất</a></span>
-                </div>
-                        
-                <div class='form-inline my-2 my-lg-0' style="visibility: {{user_not_login}}">
-                    <li class="nav-item"><a class="nav-link" href="/login" style="font-size: 18px; margin-left: 14px">Đăng nhập</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/register" style="font-size: 18px; margin-left: 14px">Đăng ký</a></li>
-                </div> {% endcomment %}
+
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown" style="visibility: {{user_login}}">
